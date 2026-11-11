@@ -1,0 +1,13 @@
+{
+  "runs": 25,
+  "warm": true,
+  "transport": "FastAPI TestClient (full POST /search)",
+  "python": "3.12.14",
+  "platform": "macOS-26.6.2-x86_64-i386-64bit",
+  "documents": 50,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "median_ms": 25.92,
+  "p95_ms": 35.04,
+  "max_ms": 42.69,
+  "all_under_2s": true
+}

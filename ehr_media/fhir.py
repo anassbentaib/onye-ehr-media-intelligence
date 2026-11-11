@@ -2,6 +2,7 @@
 import base64
 import copy
 import json
+import html
 import uuid
 from collections import defaultdict
 from functools import lru_cache
@@ -41,7 +42,7 @@ def make_bundle(records: list[CleanRecord]) -> dict:
             encounter = {"reference": reference("Encounter", eid)}
             # Neither a care setting nor a status is inferred from free text.
             encounters[eid] = {"resourceType": "Encounter", "id": eid, "status": "unknown",
-                               "class": {"system": "http://terminology.hl7.org/CodeSystem/data-absent-reason", "code": "unknown"},
+                               "class": {"extension": [{"url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason", "valueCode": "unknown"}]},
                                "subject": subject}
         attachment = {"contentType": "text/plain; charset=utf-8", "title": record.title,
                       "data": base64.b64encode(record.text.encode()).decode()}
@@ -65,6 +66,22 @@ def make_bundle(records: list[CleanRecord]) -> dict:
                 report["encounter"] = encounter
             resources.append(report)
     resources.extend(encounters.values())
+    for resource in resources:
+        header = f"{resource['resourceType']} for {person.name}, MRN {person.mrn}."
+        lines = [header]
+        if resource["resourceType"] == "Patient":
+            lines.append(f"Administrative gender: {person.gender}. Date of birth: {person.dob or 'unknown'}.")
+        elif resource["resourceType"] == "DocumentReference":
+            attachment = resource["content"][0]["attachment"]
+            lines.append(f"{attachment['title']}. Date: {attachment.get('creation', 'unknown')}. Document status: current.")
+            lines.extend(base64.b64decode(attachment["data"]).decode().splitlines())
+        elif resource["resourceType"] == "DiagnosticReport":
+            lines.append(f"{resource['code']['text']}. Date: {resource.get('effectiveDateTime', 'unknown')}. Report status: unknown.")
+            lines.extend(resource["conclusion"].splitlines())
+        else:
+            lines.append("Encounter class and status were not supplied in the source export.")
+        resource["text"] = {"status": "generated", "div": '<div xmlns="http://www.w3.org/1999/xhtml">' +
+                            "".join(f"<p>{html.escape(line)}</p>" for line in lines) + "</div>"}
     return {"resourceType": "Bundle", "id": "b-" + person.id, "type": "collection",
             "entry": [{"fullUrl": reference(r["resourceType"], r["id"]), "resource": r} for r in resources]}
 

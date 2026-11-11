@@ -85,6 +85,8 @@ async function search() {
     return;
   }
   if (query && query.length < 2) {
+    $('.results-section').setAttribute('aria-busy', 'false');
+    $('#result-timing').textContent = '';
     stateMessage('Keep typing', 'Enter at least two characters to search the record library.');
     return;
   }

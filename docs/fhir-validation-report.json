@@ -1,0 +1,13 @@
+{
+  "validator": "HL7 validator_cli 7.0.5",
+  "fhir_version": "4.0.1",
+  "bundle_count": 10,
+  "resource_count": 100,
+  "errors": 0,
+  "fatal": 0,
+  "warnings": 0,
+  "information": 80,
+  "terminology_server": "disabled (-tx n/a)",
+  "information_reason": "MIME content types cannot be terminology-validated without a terminology server.",
+  "command": "java -jar validator_cli.jar runtime/bundles -version 4.0.1 -tx n/a -output runtime/hl7-validation.json"
+}
