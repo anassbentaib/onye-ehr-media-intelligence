@@ -24,5 +24,6 @@ packages = ["ehr_media"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 markers = ["integration: requires a downloaded embedding model"]
 
