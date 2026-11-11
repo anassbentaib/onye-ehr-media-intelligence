@@ -1,0 +1,7 @@
+{
+  "name": "ehr-media-intelligence-ui",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {"build:css": "tailwindcss -i web/input.css -o web/styles.css --minify", "check:js": "node --check web/app.js"},
+  "devDependencies": {"tailwindcss": "3.4.17"}
+}

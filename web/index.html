@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Search synthetic clinical documents and inspect source-linked patient summaries.">
+  <title>Record Room · EHR Media Intelligence</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23146659'/%3E%3Cpath d='M12 10h10a6 6 0 010 12H12zm0 12 15 9' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#search-input">Skip to search</a>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Workspace navigation">
+    <a class="brand" href="/" aria-label="Record Room home"><span class="brand-mark" aria-hidden="true">r<span>.</span></span><span>record room<span class="brand-caption">EHR MEDIA INTELLIGENCE</span></span></a>
+    <p class="nav-label">WORKSPACE</p>
+    <nav>
+      <a class="nav-item active" href="#search-input" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg>Record search<span class="nav-dot"></span></a>
+      <button class="nav-item" id="quality-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6z"/><path d="m8 12 3 3 5-6"/></svg>Data quality</button>
+    </nav>
+    <div class="sidebar-note"><span class="small-kicker">A CLEARER VIEW</span><p>One place for the records<br>between the fields.</p><div class="abstract-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><div>Synthetic workspace<p>Assessment edition · 2026</p></div></div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><span>Clinical workspace <span class="breadcrumb-slash">/</span> <strong>Record search</strong></span><span class="environment"><span class="status-dot"></span>Synthetic data only</span></header>
+    <main id="main-content">
+      <section class="search-section" aria-labelledby="page-title">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span>THE RIGHT RECORD, WITH CONTEXT</div>
+        <h1 id="page-title">A clearer clinical picture.</h1>
+        <p class="intro">Find documents by meaning. Trace every summary back to its source.</p>
+        <form id="search-form" role="search">
+          <label for="search-input" class="sr-only">Search clinical records</label>
+          <div class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5"/></svg><input id="search-input" name="query" autocomplete="off" maxlength="500" placeholder="Try ‘low hemoglobin and fatigue’" aria-describedby="search-hint"><button type="submit" class="search-submit">Search <span aria-hidden="true">↗</span></button></div>
+          <div class="suggestions" id="search-hint"><span>TRY A QUESTION</span><button type="button" data-query="cough and shortness of breath">Respiratory symptoms <span aria-hidden="true">↗</span></button><button type="button" data-query="high blood glucose and diabetes">Elevated glucose <span aria-hidden="true">↗</span></button><button type="button" data-query="reduced kidney function">Kidney function <span aria-hidden="true">↗</span></button></div>
+          <div class="filter-bar">
+            <div class="field resource-field"><label for="resource-type">Record type</label><select id="resource-type"><option value="">All records</option><option value="DocumentReference">Documents</option><option value="DiagnosticReport">Diagnostic reports</option><option value="Patient">Patient summaries</option></select></div>
+            <div class="field"><label for="date-from">From</label><input type="date" id="date-from" aria-label="Records from date"></div>
+            <span class="date-separator" aria-hidden="true">—</span>
+            <div class="field"><label for="date-to">To</label><input type="date" id="date-to" aria-label="Records through date"></div>
+            <button type="button" id="clear-button" class="reset-button">Reset</button>
+          </div>
+        </form>
+      </section>
+      <div class="workspace-grid">
+        <section class="results-section" aria-labelledby="results-heading" aria-busy="false">
+          <div class="results-header"><div><h2 id="results-heading">Recently indexed</h2><p id="result-description">Loading the latest documents…</p></div><span id="result-timing" class="timing"></span></div>
+          <p id="announcer" role="status" class="sr-only" aria-live="polite"></p>
+          <div id="results" class="results-list"></div>
+        </section>
+        <aside class="context-panel" aria-label="Workspace information">
+          <div class="coverage-panel"><span class="small-kicker">YOUR RECORD LIBRARY</span><div class="coverage-count"><strong id="record-count">—</strong><span>clinical documents</span></div><div class="coverage-row"><span>Patients</span><strong id="patient-count">—</strong></div><div class="coverage-row"><span>FHIR resources</span><strong id="resource-count">—</strong></div><div class="coverage-rule"></div><span class="coverage-status"><span class="status-dot"></span><span id="index-status">Checking index</span></span></div>
+          <div class="guidance-panel"><div class="guidance-icon" aria-hidden="true">↗</div><h2>Search the meaning,<br>then check the source.</h2><p>Use a symptom, finding, or clinical question. Open a result for the patient’s summary and original records.</p><p class="score-note">Relevance measures text similarity. It is not diagnostic confidence.</p></div>
+          <div class="summary-notice" id="summary-notice"><span class="notice-symbol" aria-hidden="true">i</span><p>Summaries support record review. Always verify the original documents.</p></div>
+        </aside>
+      </div>
+      <footer class="page-footer"><span>Built for context. Designed for review.</span><span>All patient information shown is fictional.</span></footer>
+    </main>
+  </div>
+</div>
+<dialog id="patient-dialog" class="patient-drawer" aria-labelledby="patient-name">
+  <div class="drawer-top"><span class="small-kicker">PATIENT RECORD</span><button class="close-button" id="close-patient" aria-label="Close patient details">×</button></div>
+  <div id="patient-content"></div>
+</dialog>
+<dialog id="quality-dialog" class="quality-dialog" aria-labelledby="quality-title"><div class="drawer-top"><span class="small-kicker">INGESTION REVIEW</span><button class="close-button" id="close-quality" aria-label="Close data quality">×</button></div><h2 id="quality-title">Data quality</h2><div id="quality-content"></div></dialog>
+<template id="result-template">
+  <article class="record-card">
+    <div class="record-meta"><span class="type-badge"></span><span class="record-date"></span><span class="relevance"></span></div>
+    <button class="record-open"><span class="record-title"></span><span class="open-arrow" aria-hidden="true">↗</span></button>
+    <div class="patient-line"><span class="patient-avatar" aria-hidden="true"></span><span class="patient-label"></span><span class="patient-mrn"></span></div>
+    <div class="record-summary"><span class="summary-label"></span><p class="summary-text"></p></div>
+  </article>
+</template>
+</body>
+</html>
