@@ -31,6 +31,11 @@ def test_overlength_rejected():
         verify_summary(draft(value), [{"id": "r-1", "text": value}], "openai", "test")
 
 
+def test_substring_cannot_drop_negation():
+    with pytest.raises(ValueError, match="complete sentences"):
+        verify_summary(draft("evidence of pneumonia."), [{"id": "r-1", "text": "No evidence of pneumonia."}], "openai", "test")
+
+
 def test_cache_and_record_hash_and_model_invalidation(tmp_path):
     bundle = make_bundle([CleanRecord(id="r-1", patient=Patient(id="p-1", mrn="001", name="Test"),
                           kind="imaging", title="X-ray", text="No evidence of pneumonia.")])

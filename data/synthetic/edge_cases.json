@@ -1,0 +1,67 @@
+[
+  {
+    "record_id": "synthetic-01-1",
+    "patient_id": "example-01",
+    "mrn": " syn-0001 ",
+    "name": "Maya Ellis",
+    "dob": "1985-02-14",
+    "gender": "F",
+    "date": "09/05/2026",
+    "kind": "note",
+    "title": "Initial consultation",
+    "encounter_id": "visit-01",
+    "text": "Concern: Persistent cough and breathlessness.\nDiagnosis: Asthma documented in prior notes.\nSynthetic educational record. No real patient information."
+  },
+  {
+    "record_id": "missing-mrn",
+    "patient_id": "example-01",
+    "mrn": "",
+    "name": "Maya Ellis",
+    "dob": "1985-02-14",
+    "gender": "F",
+    "date": "09/05/2026",
+    "kind": "note",
+    "title": "Initial consultation",
+    "encounter_id": "visit-01",
+    "text": "Concern: Persistent cough and breathlessness.\nDiagnosis: Asthma documented in prior notes.\nSynthetic educational record. No real patient information."
+  },
+  {
+    "record_id": "bad-date",
+    "patient_id": "example-01",
+    "mrn": " syn-0001 ",
+    "name": "Maya Ellis",
+    "dob": "1985-02-14",
+    "gender": "F",
+    "date": "2026-02-30",
+    "kind": "note",
+    "title": "Initial consultation",
+    "encounter_id": "visit-01",
+    "text": "Concern: Persistent cough and breathlessness.\nDiagnosis: Asthma documented in prior notes.\nSynthetic educational record. No real patient information."
+  },
+  {
+    "record_id": "conflict-a",
+    "patient_id": "conflict",
+    "mrn": "CONFLICT001",
+    "name": "Maya Ellis",
+    "dob": "1980-01-01",
+    "gender": "F",
+    "date": "09/05/2026",
+    "kind": "note",
+    "title": "Initial consultation",
+    "encounter_id": "visit-01",
+    "text": "Concern: Persistent cough and breathlessness.\nDiagnosis: Asthma documented in prior notes.\nSynthetic educational record. No real patient information."
+  },
+  {
+    "record_id": "conflict-b",
+    "patient_id": "conflict",
+    "mrn": "CONFLICT001",
+    "name": "Maya Ellis",
+    "dob": "1981-01-01",
+    "gender": "F",
+    "date": "09/05/2026",
+    "kind": "note",
+    "title": "Initial consultation",
+    "encounter_id": "visit-01",
+    "text": "Concern: Persistent cough and breathlessness.\nDiagnosis: Asthma documented in prior notes.\nSynthetic educational record. No real patient information."
+  }
+]

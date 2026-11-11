@@ -1,0 +1,99 @@
+record_id,patient_id,mrn,name,dob,gender,date,kind,title,encounter_id,text
+synthetic-06-1,example-06, syn-0006 ,Elias Hart,1971-11-22,M,09/05/2026,note,Initial consultation,visit-06,"Concern: Review of reduced kidney function.
+Diagnosis: Chronic kidney disease stage 3 documented in prior notes.
+Synthetic educational record. No real patient information."
+synthetic-06-2,example-06,SYN0006,Elias Hart,11/22/1971,M,2026/09/12,lab,Laboratory results,visit-06,"Concern: Review of reduced kidney function.
+Diagnosis: Chronic kidney disease stage 3 documented in prior notes.
+Finding: Creatinine 1.7 mg/dL and eGFR 44 mL/min/1.73m2, flagged abnormal.
+Flag: Creatinine and eGFR flagged abnormal in the original report.
+Synthetic educational record. No real patient information."
+synthetic-06-3,example-06, syn-0006 ,Elias Hart,1971-11-22,M,15-Oct-2026,imaging,Imaging report,visit-06,"Concern: Review of reduced kidney function.
+Diagnosis: Chronic kidney disease stage 3 documented in prior notes.
+Finding: Renal ultrasound: no hydronephrosis.
+Synthetic educational record. No real patient information."
+synthetic-06-4,example-06,SYN0006,Elias Hart,11/22/1971,M,2026-10-27,lab,Follow-up laboratory results,visit-06,"Concern: Review of reduced kidney function.
+Diagnosis: Chronic kidney disease stage 3 documented in prior notes.
+Finding: Potassium 4.6 mmol/L, within the source laboratory range.
+Synthetic educational record. No real patient information."
+synthetic-06-5,example-06, syn-0006 ,Elias Hart,1971-11-22,M,11/03/2026,discharge,Follow-up visit summary,visit-06,"Concern: Review of reduced kidney function.
+Diagnosis: Chronic kidney disease stage 3 documented in prior notes.
+Flag: Creatinine and eGFR flagged abnormal in the original report.
+Synthetic educational record. No real patient information."
+synthetic-07-1,example-07, syn-0007 ,Sofia Lane,1988-03-12,F,09/05/2026,note,Initial consultation,visit-07,"Concern: Cold intolerance and fatigue.
+Diagnosis: Hypothyroidism documented in the assessment.
+Synthetic educational record. No real patient information."
+synthetic-07-2,example-07,SYN0007,Sofia Lane,03/12/1988,F,2026/09/12,lab,Laboratory results,visit-07,"Concern: Cold intolerance and fatigue.
+Diagnosis: Hypothyroidism documented in the assessment.
+Finding: TSH 9.2 mIU/L, flagged high; free T4 0.7 ng/dL, flagged low.
+Flag: TSH flagged high and free T4 flagged low in the original report.
+Synthetic educational record. No real patient information."
+synthetic-07-3,example-07, syn-0007 ,Sofia Lane,1988-03-12,F,15-Oct-2026,imaging,Imaging report,visit-07,"Concern: Cold intolerance and fatigue.
+Diagnosis: Hypothyroidism documented in the assessment.
+Finding: Thyroid ultrasound: heterogeneous gland without a discrete nodule.
+Synthetic educational record. No real patient information."
+synthetic-07-4,example-07,SYN0007,Sofia Lane,03/12/1988,F,2026-10-27,lab,Follow-up laboratory results,visit-07,"Concern: Cold intolerance and fatigue.
+Diagnosis: Hypothyroidism documented in the assessment.
+Finding: TSH 6.1 mIU/L, still flagged high on repeat testing.
+Synthetic educational record. No real patient information."
+synthetic-07-5,example-07, syn-0007 ,Sofia Lane,1988-03-12,F,11/03/2026,discharge,Follow-up visit summary,visit-07,"Concern: Cold intolerance and fatigue.
+Diagnosis: Hypothyroidism documented in the assessment.
+Flag: TSH flagged high and free T4 flagged low in the original report.
+Synthetic educational record. No real patient information."
+synthetic-08-1,example-08, syn-0008 ,Julian Reed,1990-06-06,M,09/05/2026,note,Initial consultation,visit-08,"Concern: Recurrent headaches with visual aura.
+Diagnosis: Migraine with aura documented by the neurologist.
+Synthetic educational record. No real patient information."
+synthetic-08-2,example-08,SYN0008,Julian Reed,06/06/1990,M,2026/09/12,lab,Laboratory results,visit-08,"Concern: Recurrent headaches with visual aura.
+Diagnosis: Migraine with aura documented by the neurologist.
+Finding: Sodium 139 mmol/L, within the source laboratory range.
+Synthetic educational record. No real patient information."
+synthetic-08-3,example-08, syn-0008 ,Julian Reed,1990-06-06,M,15-Oct-2026,imaging,Imaging report,visit-08,"Concern: Recurrent headaches with visual aura.
+Diagnosis: Migraine with aura documented by the neurologist.
+Finding: Brain MRI: no acute intracranial abnormality.
+Synthetic educational record. No real patient information."
+synthetic-08-4,example-08,SYN0008,Julian Reed,06/06/1990,M,2026-10-27,lab,Follow-up laboratory results,visit-08,"Concern: Recurrent headaches with visual aura.
+Diagnosis: Migraine with aura documented by the neurologist.
+Finding: ESR 8 mm/hr, within the source laboratory range.
+Synthetic educational record. No real patient information."
+synthetic-08-5,example-08, syn-0008 ,Julian Reed,1990-06-06,M,11/03/2026,discharge,Follow-up visit summary,visit-08,"Concern: Recurrent headaches with visual aura.
+Diagnosis: Migraine with aura documented by the neurologist.
+Synthetic educational record. No real patient information."
+synthetic-09-1,example-09, syn-0009 ,Amara West,1964-10-29,F,09/05/2026,note,Initial consultation,visit-09,"Concern: Intermittent palpitations without syncope.
+Diagnosis: Premature atrial contractions documented on monitoring.
+Synthetic educational record. No real patient information."
+synthetic-09-2,example-09,SYN0009,Amara West,10/29/1964,F,2026/09/12,lab,Laboratory results,visit-09,"Concern: Intermittent palpitations without syncope.
+Diagnosis: Premature atrial contractions documented on monitoring.
+Finding: TSH 2.1 mIU/L, within the source laboratory range.
+Flag: Ambulatory monitor documented frequent premature atrial contractions.
+Synthetic educational record. No real patient information."
+synthetic-09-3,example-09, syn-0009 ,Amara West,1964-10-29,F,15-Oct-2026,imaging,Imaging report,visit-09,"Concern: Intermittent palpitations without syncope.
+Diagnosis: Premature atrial contractions documented on monitoring.
+Finding: Echocardiogram: left ventricular ejection fraction 60%; no significant valve disease.
+Synthetic educational record. No real patient information."
+synthetic-09-4,example-09,SYN0009,Amara West,10/29/1964,F,2026-10-27,lab,Follow-up laboratory results,visit-09,"Concern: Intermittent palpitations without syncope.
+Diagnosis: Premature atrial contractions documented on monitoring.
+Finding: Magnesium 1.9 mg/dL, within the source laboratory range.
+Synthetic educational record. No real patient information."
+synthetic-09-5,example-09, syn-0009 ,Amara West,1964-10-29,F,11/03/2026,discharge,Follow-up visit summary,visit-09,"Concern: Intermittent palpitations without syncope.
+Diagnosis: Premature atrial contractions documented on monitoring.
+Flag: Ambulatory monitor documented frequent premature atrial contractions.
+Synthetic educational record. No real patient information."
+synthetic-10-1,example-10, syn-0010 ,Theo Brooks,1982-01-09,M,09/05/2026,note,Initial consultation,visit-10,"Concern: Dysuria and urinary frequency.
+Diagnosis: Urinary tract infection documented in the visit note.
+Synthetic educational record. No real patient information."
+synthetic-10-2,example-10,SYN0010,Theo Brooks,01/09/1982,M,2026/09/12,lab,Laboratory results,visit-10,"Concern: Dysuria and urinary frequency.
+Diagnosis: Urinary tract infection documented in the visit note.
+Finding: Urinalysis: positive nitrites and leukocyte esterase.
+Flag: Positive urine culture documented in the original report.
+Synthetic educational record. No real patient information."
+synthetic-10-3,example-10, syn-0010 ,Theo Brooks,1982-01-09,M,15-Oct-2026,imaging,Imaging report,visit-10,"Concern: Dysuria and urinary frequency.
+Diagnosis: Urinary tract infection documented in the visit note.
+Finding: Renal ultrasound: no renal stone or hydronephrosis reported.
+Synthetic educational record. No real patient information."
+synthetic-10-4,example-10,SYN0010,Theo Brooks,01/09/1982,M,2026-10-27,lab,Follow-up laboratory results,visit-10,"Concern: Dysuria and urinary frequency.
+Diagnosis: Urinary tract infection documented in the visit note.
+Finding: Urine culture: Escherichia coli greater than 100,000 CFU/mL.
+Synthetic educational record. No real patient information."
+synthetic-10-5,example-10, syn-0010 ,Theo Brooks,1982-01-09,M,11/03/2026,discharge,Follow-up visit summary,visit-10,"Concern: Dysuria and urinary frequency.
+Diagnosis: Urinary tract infection documented in the visit note.
+Flag: Positive urine culture documented in the original report.
+Synthetic educational record. No real patient information."

@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date as Date
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -9,7 +9,7 @@ class Patient(BaseModel):
     id: str
     mrn: str
     name: str
-    dob: date | None = None
+    dob: Date | None = None
     gender: Literal["male", "female", "other", "unknown"] = "unknown"
 
 
@@ -21,7 +21,7 @@ class CleanRecord(BaseModel):
     patient: Patient
     kind: Literal["note", "lab", "imaging", "discharge"]
     title: str
-    date: date | None = None
+    date: Date | None = None
     text: str = Field(min_length=1, max_length=50000)
     encounter_id: str | None = None
 
